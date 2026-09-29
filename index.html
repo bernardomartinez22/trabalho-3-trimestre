@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aprende+ Português - Alfabetização de Adultos</title>
+  <meta name="description" content="Plataforma interativa de apoio ao letramento e alfabetização de jovens e adultos.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topo">
+  <div class="faixa">
+    <p class="marca">Aprende+ Português</p>
+    <nav>
+      <a href="#problema">O Problema</a>
+      <a href="#cadastrar">Registrar Aula</a>
+      <a href="#mural">Mural de Progresso</a>
+    </nav>
+  </div>
+</header>
+
+<section class="capa">
+  <img src="imagens/capa.jpg" alt="Pessoa utilizando fones de ouvido e celular para estudar">
+  <div class="capa-texto">
+    <h1>Aprender a ler abre portas e transforma vidas</h1>
+    <p>Exercícios focados na associação de áudios, imagens e sílabas para o letramento prático de adultos.</p>
+    <a class="botao" href="#cadastrar">Registrar Progresso</a>
+  </div>
+</section>
+
+<main>
+
+<section id="problema" class="bloco">
+  <h2>O Problema</h2>
+  <p class="largura-texto">O analfabetismo funcional na idade adulta dificulta a leitura de placas, rótulos e avisos no dia a dia, limitando a autonomia das pessoas.</p>
+  <p class="largura-texto"><b>Quem sofre com isso:</b> Adultos e idosos não alfabetizados da nossa comunidade.</p>
+  <p class="largura-texto"><b>Onde acontece:</b> No bairro e nas tarefas cotidianas do dia a dia.</p>
+  <div class="galeria">
+    <figure>
+      <img src="imagens/foto1.jpg" alt="Exercício prático de associação entre palavras e imagens do cotidiano">
+      <figcaption>Atividade prática com leitura de embalagens e nomes de produtos.</figcaption>
+    </figure>
+    <figure>
+      <img src="imagens/foto2.jpg" alt="Pessoa praticando a escrita e pronúncia de sílabas simples">
+      <figcaption>Uso de recursos audiovisuais para fixação de sílabas e vogais.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="bloco">
+  <h2>Os Números do Projeto</h2>
+  <p class="largura-texto">Indicador: número de exercícios concluídos por alunos em 4 semanas.</p>
+  <div class="painel" id="painel"></div>
+</section>
+
+<section id="cadastrar" class="bloco">
+  <h2>Registrar Progresso da Aula</h2>
+  <form id="formulario" class="formulario">
+    <div class="campo">
+      <label for="nomeAluno">Nome ou Apelido do Aluno</label>
+      <input type="text" id="nomeAluno" maxlength="80" required placeholder="Ex: Maria S.">
+    </div>
+    <div class="campo">
+      <label for="nivelModulo">Módulo do Exercício</label>
+      <select id="nivelModulo" required>
+        <option value="">Selecione um módulo...</option>
+        <option>Vogais</option>
+        <option>Sílabas Simples</option>
+        <option>Palavras do Dia a Dia</option>
+        <option>Frases Curtas</option>
+      </select>
+    </div>
+    <div class="campo">
+      <label for="exercicioRealizado">Nome do Exercício</label>
+      <input type="text" id="exercicioRealizado" maxlength="80" required placeholder="Ex: Reconhecimento de Vogais com Som">
+    </div>
+    <div class="campo">
+      <label for="pontuacao">Desempenho (Nota de 0 a 10)</label>
+      <input type="number" id="pontuacao" min="0" max="10" step="1" required placeholder="10">
+    </div>
+    <div class="campo largo">
+      <label for="observacoes">Observações ou Dificuldades</label>
+      <textarea id="observacoes" rows="3" maxlength="300" required placeholder="Descreva como o aluno se saiu no exercício..."></textarea>
+    </div>
+    <button type="submit" class="botao">Salvar Registro</button>
+    <p id="aviso" class="aviso" role="status"></p>
+  </form>
+</section>
+
+<section id="mural" class="bloco">
+  <h2>Mural de Progresso</h2>
+  <div class="ferramentas">
+    <div class="ferramenta">
+      <label for="busca">Buscar</label>
+      <input type="text" id="busca" placeholder="Buscar por aluno ou palavra...">
+    </div>
+    <div class="ferramenta">
+      <label for="filtro">Filtrar Módulo</label>
+      <select id="filtro">
+        <option value="todas">Todos os Módulos</option>
+        <option>Vogais</option>
+        <option>Sílabas Simples</option>
+        <option>Palavras do Dia a Dia</option>
+        <option>Frases Curtas</option>
+      </select>
+    </div>
+    <div class="ferramenta">
+      <label for="exportar">Backup de Dados</label>
+      <div class="grupo-botoes">
+        <button type="button" id="exportar" class="botao-fino">Baixar</button>
+        <label for="importar" class="botao-fino">Carregar</label>
+        <input type="file" id="importar" accept="application/json" hidden>
+        <button type="button" id="limpar" class="botao-fino perigo">Apagar Tudo</button>
+      </div>
+    </div>
+  </div>
+  <div id="lista" class="lista"></div>
+</section>
+
+</main>
+
+<footer class="rodape">
+  <p>Projeto Aprende+ Português | Desenvolvido para o Trabalho de Programação</p>
+  <p class="miudo">Alinhado ao ODS 4 (Educação de Qualidade) da ONU. Protótipo funcional com armazenamento local.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

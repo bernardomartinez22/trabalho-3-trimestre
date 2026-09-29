@@ -1,0 +1,174 @@
+/* =========================================================
+   style.css - Estilização do Aprende+ Português
+   ========================================================= */
+
+:root {
+  --tinta:  #1b2a4a;   /* Texto principal (Azul escuro) */
+  --papel:  #f4f7fb;   /* Fundo da página */
+  --marca:  #0056b3;   /* Cor principal/botões */
+  --sinal:  #ffc107;   /* Cor de destaque (Amarelo) */
+  --alerta: #dc3545;   /* Botão apagar */
+  --borda:  #d0d7de;   /* Linhas e bordas */
+  --largura: 1080px;  /* Largura máxima centralizada */
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+h1, h2, h3 { font-family: Georgia, 'Times New Roman', serif; line-height: 1.2; }
+h1 { font-size: 2.2rem; }
+h2 { font-size: 1.6rem; margin-bottom: 0.8rem; }
+h3 { font-size: 1.2rem; }
+img { max-width: 100%; display: block; }
+a { color: var(--marca); }
+
+/* Topo e Navegação */
+.topo {
+  background: var(--tinta);
+  border-bottom: 5px solid var(--sinal);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.faixa {
+  max-width: var(--largura); margin: 0 auto; padding: 0.9rem 1.2rem;
+  display: flex; flex-wrap: wrap; gap: 0.8rem;
+  align-items: center; justify-content: space-between;
+}
+.marca { color: #fff; font-weight: 700; font-size: 1.2rem; }
+.topo nav { display: flex; gap: 1.2rem; }
+.topo nav a { color: #d8ddd6; text-decoration: none; font-size: 0.95rem; font-weight: 600; }
+.topo nav a:hover { color: var(--sinal); }
+
+/* Capa */
+.capa { position: relative; background: var(--tinta); }
+.capa img { width: 100%; height: 400px; object-fit: cover; opacity: 0.45; }
+.capa-texto {
+  position: absolute; inset: 0;
+  max-width: var(--largura); margin: 0 auto; padding: 2rem 1.2rem;
+  display: flex; flex-direction: column; justify-content: center;
+  align-items: flex-start; gap: 1rem; color: #fff;
+}
+.capa-texto h1 { max-width: 18ch; }
+.capa-texto p { max-width: 50ch; }
+
+/* Botões */
+.botao {
+  display: inline-block; background: var(--sinal); color: var(--tinta);
+  border: none; padding: 0.8rem 1.5rem; font-size: 1rem; font-weight: 700;
+  border-radius: 6px; text-decoration: none; cursor: pointer;
+}
+.botao:hover { background: #e0a800; }
+.botao-fino {
+  background: none; border: 1px solid var(--borda); color: var(--tinta);
+  padding: 0.4rem 0.8rem; font-size: 0.85rem; cursor: pointer; border-radius: 4px;
+}
+.botao-fino:hover { background: var(--borda); }
+.botao-fino.perigo { border-color: var(--alerta); color: var(--alerta); }
+.botao-fino.perigo:hover { background: var(--alerta); color: #fff; }
+
+a:focus-visible, button:focus-visible, input:focus-visible,
+select:focus-visible, textarea:focus-visible, label:focus-visible {
+  outline: 3px solid var(--marca); outline-offset: 2px;
+}
+
+/* Blocos de Conteúdo */
+.bloco {
+  max-width: var(--largura); margin: 0 auto;
+  padding: 3rem 1.2rem; border-bottom: 1px solid var(--borda);
+}
+.largura-texto { max-width: 70ch; margin-bottom: 0.6rem; }
+
+.galeria {
+  margin-top: 1.5rem; display: grid; gap: 1.2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.galeria img { height: 220px; object-fit: cover; width: 100%; border-radius: 6px; }
+figcaption {
+  font-size: 0.85rem; margin-top: 0.5rem;
+  border-left: 4px solid var(--sinal); padding-left: 0.6rem;
+}
+
+/* Painel de Números */
+.painel {
+  display: grid; gap: 1rem; margin-top: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+}
+.numero {
+  background: #fff; border: 1px solid var(--borda);
+  border-top: 5px solid var(--marca); padding: 1rem; border-radius: 6px;
+}
+.numero b { display: block; font-size: 2.1rem; line-height: 1; color: var(--marca); }
+.numero span { font-size: 0.8rem; color: #55605a; }
+.numero.pequeno { border-top-color: var(--sinal); }
+.numero.pequeno b { font-size: 1.4rem; color: var(--tinta); }
+
+/* Formuário */
+.formulario {
+  display: grid; gap: 1rem; max-width: 760px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.campo { display: flex; flex-direction: column; gap: 0.3rem; }
+.campo.largo { grid-column: 1 / -1; }
+label { font-size: 0.85rem; font-weight: 600; }
+input, select, textarea {
+  font: inherit; padding: 0.65rem; border: 1px solid var(--borda);
+  background: #fff; color: var(--tinta); border-radius: 4px;
+}
+.formulario .botao { grid-column: 1 / -1; justify-self: start; }
+.aviso { grid-column: 1 / -1; font-size: 0.9rem; color: var(--marca); min-height: 1.4em; font-weight: 600; }
+
+/* Ferramentas do Mural */
+.ferramentas {
+  display: flex; gap: 1rem; flex-wrap: wrap;
+  align-items: flex-end; margin: 1rem 0 1.5rem;
+}
+.ferramenta { display: flex; flex-direction: column; gap: 0.3rem; }
+.grupo-botoes { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+.grupo-botoes label { cursor: pointer; }
+
+/* Lista de Cartões */
+.lista {
+  display: grid; gap: 1rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+.cartao {
+  background: #fff; border: 1px solid var(--borda);
+  border-left: 6px solid var(--marca); padding: 1rem; border-radius: 6px;
+  display: flex; flex-direction: column; gap: 0.5rem;
+}
+.cartao p { font-size: 0.92rem; }
+.etiqueta { font-size: 0.75rem; font-weight: 700; color: #55605a; text-transform: uppercase; }
+.cartao footer {
+  display: flex; justify-content: space-between; align-items: center;
+  gap: 0.5rem; margin-top: auto; padding-top: 0.5rem;
+  border-top: 1px dashed var(--borda); font-size: 0.8rem;
+}
+.cartao .apagar {
+  background: none; border: 1px solid var(--alerta); color: var(--alerta);
+  padding: 0.25rem 0.6rem; font-size: 0.78rem; cursor: pointer; border-radius: 4px;
+}
+.cartao .apagar:hover { background: var(--alerta); color: #fff; }
+.vazio {
+  grid-column: 1 / -1; padding: 2rem; text-align: center;
+  border: 2px dashed var(--borda); color: #55605a; border-radius: 6px;
+}
+
+/* Rodapé */
+.rodape { background: var(--tinta); color: #d8ddd6; padding: 2rem 1.2rem; text-align: center; }
+.miudo { font-size: 0.8rem; color: #97a19b; margin-top: 0.4rem; }
+
+/* Adaptação para Celular */
+@media (max-width: 640px) {
+  h1 { font-size: 1.7rem; }
+  .capa img { height: 320px; }
+  .bloco { padding: 2rem 1rem; }
+  .ferramentas { flex-direction: column; align-items: stretch; }
+}
