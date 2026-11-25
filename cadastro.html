@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Cadastre-se para participar da comunidade Aprenda+.">
+  <title>Cadastro — Aprenda+</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+  <script src="assets/js/cadastro.js" defer></script>
+</head>
+<body class="registration-page">
+  <a class="skip-link" href="#conteudo">Pular para o formulário</a>
+  <header class="site-header registration-header">
+    <a class="brand" href="index.html" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a>
+    <a class="return-link" href="index.html">← Voltar ao site</a>
+  </header>
+  <main class="registration-main" id="conteudo">
+    <div class="registration-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> VAMOS APRENDER JUNTOS</p>
+      <h1>Faça seu <em>cadastro.</em></h1>
+      <p>Escolha um nome de usuário e crie uma senha para entrar novamente.</p>
+      <p class="existing-account">Já tem cadastro? <a href="login.html">Entrar com nome de usuário</a></p>
+    </div>
+    <section class="registration-card" aria-labelledby="form-title">
+      <div class="registration-card-heading"><span class="registration-icon" aria-hidden="true">✳</span><div><h2 id="form-title">Seus dados</h2><p>Os campos abaixo são obrigatórios.</p></div></div>
+      <form id="registration-form">
+        <label class="form-field" for="nome">Nome completo
+          <input id="nome" name="nome" type="text" autocomplete="name" minlength="2" maxlength="100" placeholder="Como podemos chamar você?" required>
+        </label>
+        <label class="form-field" for="nome-usuario">Nome de usuário
+          <input id="nome-usuario" name="nomeUsuario" type="text" autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" placeholder="Ex.: ana_123" required>
+          <span class="field-hint">De 3 a 20 letras, números, ponto, hífen ou sublinhado.</span>
+        </label>
+        <label class="form-field" for="nascimento">Data de nascimento
+          <input id="nascimento" name="nascimento" type="date" autocomplete="bday" required>
+        </label>
+        <label class="form-field" for="cidade-nascimento">Cidade de nascimento
+          <input id="cidade-nascimento" name="cidadeNascimento" type="text" autocomplete="address-level2" minlength="2" maxlength="100" placeholder="Ex.: Santa Maria, RS" required>
+          <span class="field-hint">Inclua a sigla do estado para diferenciar cidades com o mesmo nome.</span>
+        </label>
+        <label class="form-field" for="telefone">Número de telefone para contato <span class="optional-label">(opcional)</span>
+          <input id="telefone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(00) 00000-0000">
+          <span class="field-hint">Se informar, inclua o DDD. Exemplo: (11) 91234-5678.</span>
+        </label>
+        <label class="form-field" for="senha">Crie uma senha
+          <input id="senha" name="senha" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Pelo menos 8 caracteres" required>
+          <span class="field-hint">Use pelo menos 8 caracteres.</span>
+        </label>
+        <label class="form-field" for="confirmar-senha">Confirme sua senha
+          <input id="confirmar-senha" name="confirmarSenha" type="password" autocomplete="new-password" minlength="8" maxlength="128" placeholder="Digite a senha novamente" required>
+        </label>
+        <p class="form-error" id="form-error" role="alert" hidden></p>
+        <button class="button button-dark submit-registration" type="submit">Salvar meu cadastro <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="registration-success" id="registration-success" role="status" aria-live="polite" hidden>
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <h2>Cadastro salvo!</h2>
+        <p>Seu nome de usuário é <b id="saved-username"></b>. Use-o com sua senha para entrar novamente.</p>
+        <div class="success-actions"><a class="button button-dark" href="login.html">Entrar com meu cadastro <span aria-hidden="true">↗</span></a><a class="text-button" href="index.html">Voltar ao site</a><button class="text-button" id="another-registration" type="button">Cadastrar outra pessoa</button></div>
+      </div>
+      <p class="storage-note"><span aria-hidden="true">◎</span> Para este protótipo, o cadastro fica salvo apenas neste navegador e dispositivo. Os dados não são enviados a um servidor.</p>
+    </section>
+    <p class="registration-footer">APRENDA+ · LEITURA, ESCRITA E NOVOS CAMINHOS</p>
+  </main>
+</body>
+</html>

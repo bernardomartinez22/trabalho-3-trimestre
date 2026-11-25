@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Jogos interativos de alfabetização do Aprenda+.">
+  <title>Jogos de alfabetização — Aprenda+</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/jogos.css">
+  <script src="assets/js/jogos.js" defer></script>
+</head>
+<body class="games-page">
+  <a class="skip-link" href="#conteudo">Pular para os jogos</a>
+  <header class="site-header games-header">
+    <a class="brand" href="index.html" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a>
+    <nav class="account-tabs games-tabs" aria-label="Sua conta">
+      <a class="account-tab" href="login.html">Minha conta</a>
+      <a class="account-tab is-current" href="jogos.html" aria-current="page">Jogos de alfabetização</a>
+        <a class="account-tab" href="ranking.html">Ranking</a>
+    </nav>
+    <div class="games-account"><span id="account-greeting">Olá!</span><button id="games-logout" class="text-button" type="button">Sair</button></div>
+  </header>
+  <main class="games-main" id="conteudo">
+    <section class="games-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> SEU ESPAÇO DE APRENDIZAGEM</p>
+      <h1>Vamos brincar com as <em>palavras?</em></h1>
+      <p>Escolha um nível e um jogo. Leia as instruções com calma e divirta-se aprendendo!</p>
+    </section>
+
+    <section class="game-library" id="game-library" aria-labelledby="level-heading">
+      <div class="level-heading"><div><span class="game-step-label">PASSO 1</span><h2 id="level-heading">Escolha seu nível</h2></div><p id="level-description">Comece com letras, sons e palavras curtinhas.</p></div>
+      <div class="game-levels" role="group" aria-label="Nível dos jogos">
+        <button class="game-level is-selected" type="button" data-level="iniciante" aria-pressed="true"><span aria-hidden="true">🌱</span><b>Iniciante</b><small>Vamos começar</small></button>
+        <button class="game-level" type="button" data-level="intermediario" aria-pressed="false"><span aria-hidden="true">🌿</span><b>Intermediário</b><small>Mais um desafio</small></button>
+        <button class="game-level" type="button" data-level="avancado" aria-pressed="false"><span aria-hidden="true">🌳</span><b>Avançado</b><small>Pronto para avançar?</small></button>
+      </div>
+      <div class="game-list-heading"><div><span class="game-step-label">PASSO 2</span><h2>Escolha uma brincadeira</h2></div><span class="tiny-spark" aria-hidden="true">✦</span></div>
+      <div class="game-grid">
+        <article class="game-card"><span class="game-icon syllable-icon" aria-hidden="true">CA<span>SA</span></span><span class="game-card-number">JOGO 01</span><h3>Complete a sílaba</h3><p>Encontre a sílaba que está faltando e complete a palavra.</p><button class="play-game-button" data-game="syllables" type="button">Jogar <span aria-hidden="true">→</span></button></article>
+        <article class="game-card"><span class="game-icon" aria-hidden="true">🧩</span><span class="game-card-number">JOGO 02</span><h3>Forme palavras</h3><p>Junte as sílabas na ordem certa para descobrir a palavra.</p><button class="play-game-button" data-game="words" type="button">Jogar <span aria-hidden="true">→</span></button></article>
+        <article class="game-card"><span class="game-icon" aria-hidden="true">🖼️</span><span class="game-card-number">JOGO 03</span><h3>Ligue letra e figura</h3><p>Olhe a figura e escolha a letra que começa o nome dela.</p><button class="play-game-button" data-game="matching" type="button">Jogar <span aria-hidden="true">→</span></button></article>
+        <article class="game-card"><span class="game-icon" aria-hidden="true">🔊</span><span class="game-card-number">JOGO 04</span><h3>Escute o som</h3><p>Ouça o nome da figura e descubra o som do começo.</p><button class="play-game-button" data-game="sounds" type="button">Jogar <span aria-hidden="true">→</span></button></article>
+      </div>
+      <p class="child-note"><span aria-hidden="true">💚</span> Pode pedir ajuda a um adulto. Errar também ajuda a aprender!</p>
+    </section>
+
+    <section class="play-panel" id="play-panel" aria-labelledby="play-title" hidden>
+      <button class="back-to-games" id="back-to-games" type="button">← Voltar aos jogos</button>
+      <div class="play-card">
+        <div class="play-card-top"><span class="game-step-label" id="current-game-label">JOGO</span><span class="play-level" id="play-level">INICIANTE</span></div>
+        <div class="game-progress" role="progressbar" aria-label="Progresso do jogo" aria-valuemin="0" aria-valuemax="2" aria-valuenow="0"><span id="game-progress-fill"></span></div>
+        <div class="play-content" id="play-content">
+          <div class="play-question-head"><span class="play-picture" id="play-picture" role="img" aria-label=""></span><div><h2 id="play-title"></h2><p id="play-instruction"></p></div></div>
+          <div class="word-pattern" id="word-pattern" hidden></div>
+          <button class="sound-button" id="sound-button" type="button" hidden><span aria-hidden="true">▶</span> Ouvir a palavra</button>
+          <p class="syllable-answer" id="syllable-answer" aria-live="polite" hidden></p>
+          <div class="game-options" id="game-options" role="group" aria-label="Escolha sua resposta"></div>
+          <button class="try-again-button" id="try-again" type="button" hidden>Tentar de novo</button>
+          <p class="game-feedback" id="game-feedback" aria-live="polite" aria-atomic="true"></p>
+          <button class="button button-dark continue-game" id="continue-game" type="button" disabled>Responder para continuar <span aria-hidden="true">→</span></button>
+        </div>
+        <div class="game-result" id="game-result" hidden></div>
+      </div>
+    </section>
+    <p class="games-footer">APRENDA+ · CADA LETRA É UM NOVO COMEÇO</p>
+  </main>
+</body>
+</html>

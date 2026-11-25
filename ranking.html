@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Ranking local dos jogadores Aprenda+.">
+  <title>Ranking — Aprenda+</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <link rel="stylesheet" href="assets/css/jogos.css">
+  <link rel="stylesheet" href="assets/css/ranking.css">
+  <script src="assets/js/ranking.js" defer></script>
+</head>
+<body class="games-page ranking-page">
+  <a class="skip-link" href="#conteudo">Pular para o ranking</a>
+  <header class="site-header games-header">
+    <a class="brand" href="index.html" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a>
+    <nav class="account-tabs games-tabs" aria-label="Sua conta">
+      <a class="account-tab" href="login.html">Minha conta</a>
+      <a class="account-tab" href="jogos.html">Jogos de alfabetização</a>
+      <a class="account-tab is-current" href="ranking.html" aria-current="page">Ranking</a>
+    </nav>
+    <div class="games-account"><span id="account-greeting">Olá!</span><button id="ranking-logout" class="text-button" type="button">Sair</button></div>
+  </header>
+  <main class="ranking-main" id="conteudo">
+    <section class="ranking-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> APRENDER TAMBÉM É CONQUISTA</p>
+      <h1>Ranking da <em>aprendizagem.</em></h1>
+      <p>Veja quem está praticando e somando pontos nos jogos Aprenda+.</p>
+    </section>
+    <section class="score-explainer" aria-label="Como ganhar pontos">
+      <div><span class="score-star">★</span><p><b>10 pontos</b><small>por resposta certa</small></p></div>
+      <span class="score-plus">+</span>
+      <div><span class="score-finish">✓</span><p><b>5 pontos</b><small>por concluir um jogo</small></p></div>
+      <p class="score-rule">Cada jogo em cada nível conta pela melhor pontuação. Repetir ajuda a aprender, mas não multiplica os pontos.</p>
+    </section>
+    <section class="leaderboard" aria-labelledby="leaderboard-title">
+      <div class="leaderboard-heading"><div><span class="game-step-label">NOSSO QUADRO DE CONQUISTAS</span><h2 id="leaderboard-title">Quem está no topo?</h2></div><span class="player-count" id="player-count">0 jogadores</span></div>
+      <div class="podium" id="podium" aria-label="Destaques do ranking"></div>
+      <div class="empty-ranking" id="empty-ranking" hidden>
+        <span aria-hidden="true">🌱</span><h3>O ranking começa com você!</h3><p>Conclua um jogo para aparecer aqui. Toda tentativa é um bom começo.</p><a class="button button-dark" href="jogos.html">Escolher um jogo <span aria-hidden="true">↗</span></a>
+      </div>
+      <div class="ranking-table-wrap" id="ranking-table-wrap">
+        <table class="ranking-table">
+          <caption>Jogadores ordenados por pontuação total. Empates compartilham a mesma colocação.</caption>
+          <thead><tr><th scope="col">Lugar</th><th scope="col">Jogador</th><th scope="col">Jogos concluídos</th><th scope="col">Pontos</th></tr></thead>
+          <tbody id="ranking-rows"></tbody>
+        </table>
+      </div>
+      <div class="ranking-actions"><a class="button button-dark" href="jogos.html">Continuar jogando <span aria-hidden="true">↗</span></a><button class="text-button" id="refresh-ranking" type="button">Atualizar ranking ↻</button></div>
+    </section>
+    <section class="city-summary" aria-labelledby="city-summary-title">
+      <div class="leaderboard-heading"><div><span class="game-step-label">PARTICIPAÇÃO DA COMUNIDADE</span><h2 id="city-summary-title">Cadastros por cidade de nascimento</h2></div><span class="player-count" id="city-count">0 cidades</span></div>
+      <p class="city-summary-note">Contagem de participantes cadastrados por local de nascimento. É um retrato dos cadastros feitos aqui, não uma estimativa de analfabetismo por cidade.</p>
+      <div class="city-table-wrap"><table class="ranking-table city-table"><caption>Cidades informadas nos cadastros salvos neste navegador.</caption><thead><tr><th scope="col">Cidade de nascimento</th><th scope="col">Cadastros</th></tr></thead><tbody id="city-rows"></tbody></table></div>
+      <p class="city-empty" id="city-empty" hidden>Nenhuma cidade de nascimento foi informada ainda.</p>
+    </section>
+    <p class="ranking-note"><span aria-hidden="true">◎</span> Este ranking reúne somente cadastros com jogos concluídos neste navegador e dispositivo. Ele não é enviado a um servidor.</p>
+    <p class="games-footer">APRENDA+ · CADA LETRA É UM NOVO COMEÇO</p>
+  </main>
+</body>
+</html>

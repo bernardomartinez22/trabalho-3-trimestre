@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Entre na sua conta Aprenda+ com nome de usuário e senha.">
+  <title>Entrar — Aprenda+</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/cadastro.css">
+  <link rel="stylesheet" href="assets/css/login.css">
+  <script src="assets/js/login.js" defer></script>
+</head>
+<body class="registration-page">
+  <a class="skip-link" href="#conteudo">Pular para o login</a>
+  <header class="site-header registration-header">
+    <a class="brand" href="index.html" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a>
+    <a class="return-link" href="index.html">← Voltar ao site</a>
+  </header>
+  <main class="registration-main" id="conteudo">
+    <div class="registration-intro">
+      <p class="eyebrow"><span class="eyebrow-dot"></span> BOM TER VOCÊ DE VOLTA</p>
+      <h1>Entre na sua <em>conta.</em></h1>
+      <p>Entre com o nome de usuário escolhido no cadastro e sua senha.</p>
+    </div>
+    <section class="registration-card login-card" aria-labelledby="login-title">
+      <div class="registration-card-heading"><span class="registration-icon" aria-hidden="true">↗</span><div><h2 id="login-title">Acessar Aprenda+</h2><p>Seus dados ficam neste navegador.</p></div></div>
+      <form id="login-form">
+        <label class="form-field" for="login-usuario">Nome de usuário
+          <input id="login-usuario" name="nomeUsuario" type="text" autocomplete="username" minlength="3" maxlength="20" placeholder="Digite seu nome de usuário" required>
+        </label>
+        <label class="form-field" for="login-senha">Senha
+          <input id="login-senha" name="senha" type="password" autocomplete="current-password" maxlength="128" placeholder="Digite sua senha" required>
+        </label>
+        <p class="form-error" id="login-error" role="alert" hidden></p>
+        <button class="button button-dark submit-registration" type="submit">Entrar <span aria-hidden="true">↗</span></button>
+      </form>
+      <details class="legacy-migration" id="legacy-migration">
+        <summary>Minha conta é antiga? Atualizar nome de usuário</summary>
+        <form id="legacy-form" hidden>
+          <p>Use seu telefone e senha antigos uma vez. Depois, entre sempre com o novo nome de usuário.</p>
+          <label class="form-field" for="legacy-phone">Telefone cadastrado
+            <input id="legacy-phone" name="telefone" type="tel" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="(00) 00000-0000" required>
+          </label>
+          <label class="form-field" for="legacy-password">Senha atual
+            <input id="legacy-password" name="senha" type="password" autocomplete="current-password" maxlength="128" required>
+          </label>
+          <label class="form-field" for="legacy-username">Escolha um nome de usuário
+            <input id="legacy-username" name="nomeUsuario" type="text" autocomplete="username" minlength="3" maxlength="20" pattern="[A-Za-z0-9._-]{3,20}" placeholder="Ex.: ana_123" required>
+            <span class="field-hint">De 3 a 20 letras, números, ponto, hífen ou sublinhado.</span>
+          </label>
+          <p class="form-error" id="legacy-error" role="alert" hidden></p>
+          <button class="button button-dark" type="submit">Atualizar meu acesso <span aria-hidden="true">↗</span></button>
+        </form>
+      </details>
+      <div class="registration-success" id="login-success" role="status" aria-live="polite" hidden>
+        <span class="success-mark" aria-hidden="true">✓</span>
+        <h2 id="welcome-name">Você entrou!</h2>
+        <p>Seu nome de usuário e senha foram conferidos. Escolha para onde quer ir.</p>
+        <nav class="account-tabs" aria-label="Sua conta">
+          <a class="account-tab is-current" href="#login-success" aria-current="page">Minha conta</a>
+          <a class="account-tab" href="jogos.html">Jogos de alfabetização <span aria-hidden="true">↗</span></a>
+          <a class="account-tab" href="ranking.html">Ranking <span aria-hidden="true">↗</span></a>
+        </nav>
+        <form class="city-completion" id="city-completion" hidden>
+          <p>Complete seu cadastro com a cidade onde você nasceu.</p>
+          <label class="form-field" for="city-completion-input">Cidade de nascimento
+            <input id="city-completion-input" name="cidadeNascimento" type="text" autocomplete="address-level2" minlength="2" maxlength="100" placeholder="Ex.: Santa Maria, RS" required>
+            <span class="field-hint">Inclua a sigla do estado.</span>
+          </label>
+          <p class="form-error" id="city-completion-error" role="alert" hidden></p>
+          <button class="button button-dark" type="submit">Salvar cidade <span aria-hidden="true">↗</span></button>
+        </form>
+        <p class="city-completion-done" id="city-completion-done" role="status" hidden>Cidade salva. Ela já aparece no resumo de cadastros do ranking.</p>
+        <div class="success-actions"><a class="button button-dark" href="index.html">Ir para o Aprenda+ <span aria-hidden="true">↗</span></a><button class="text-button" id="logout-button" type="button">Sair da conta</button></div>
+      </div>
+      <p class="existing-account no-account">Ainda não tem cadastro? <a href="cadastro.html">Criar cadastro e senha</a></p>
+      <p class="storage-note"><span aria-hidden="true">◎</span> Este login de demonstração só reconhece contas criadas neste navegador e dispositivo. Para acesso entre dispositivos seria necessário um servidor seguro.</p>
+    </section>
+    <p class="registration-footer">APRENDA+ · LEITURA, ESCRITA E NOVOS CAMINHOS</p>
+  </main>
+</body>
+</html>

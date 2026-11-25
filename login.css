@@ -1,0 +1,24 @@
+.login-card{max-width:620px;margin:0 auto}
+.login-card .form-field{margin-bottom:19px}
+.login-card .no-account{display:block;text-align:center;margin:20px 0 0;font-size:10px;color:#758177}
+.existing-account a{color:#315b44;text-decoration:underline;text-underline-offset:3px;font-weight:700}
+.existing-account a:hover{color:#b6744b}
+.no-account[hidden]{display:none}
+.legacy-migration{margin:18px auto 0;max-width:430px;border-top:1px solid #e7e9e1;padding-top:12px}
+.legacy-migration summary{font-size:9px;font-weight:600;color:#66766b;cursor:pointer;text-align:center}
+.legacy-migration form{margin-top:13px;padding:15px;background:#f5f6ed;border-radius:4px}
+.legacy-migration form>p:first-child{font-size:10px;line-height:1.6;color:#66766b;margin:0 0 12px}
+.legacy-migration form .form-field{margin-bottom:13px}
+.legacy-migration form[hidden]{display:none}
+.join-actions{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.join-login{font-size:10px;font-weight:600;color:#53665c;border-bottom:1px solid #bdc7bb;padding-bottom:4px}
+.join-login:hover{color:#b6744b}
+.account-tabs{display:flex;justify-content:center;gap:8px;margin:21px auto 18px;border-bottom:1px solid #e2e4da;max-width:410px}
+.account-tab{padding:10px 13px;color:#627268;font-size:10px;font-weight:600;border-bottom:2px solid transparent}
+.account-tab.is-current{color:#244e40;border-color:#b9cc61}
+.account-tab span{color:#b6744b;margin-left:5px}
+.city-completion{max-width:430px;margin:17px auto;padding:16px;background:#f5f6ed;border:1px solid #e2e7d9;border-radius:4px;text-align:left}
+.city-completion>p:first-child{font-size:10px;color:#66766b;margin:0 0 12px}
+.city-completion-done{max-width:430px;margin:17px auto;padding:12px 15px;background:#edf3e7;border-radius:4px;color:#416b42;font-size:10px;text-align:center}
+.city-completion-done[hidden]{display:none}
+@media(max-width:680px){.join-actions{gap:14px}.join-login{font-size:9px}}

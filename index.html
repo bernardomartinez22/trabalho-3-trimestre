@@ -1,130 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Aprende+ Português - Alfabetização de Adultos</title>
-  <meta name="description" content="Plataforma interativa de apoio ao letramento e alfabetização de jovens e adultos.">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f5ef">
+  <meta name="description" content="Aprenda+: uma proposta comunitária e acessível para apoiar a alfabetização de jovens e adultos no Brasil.">
+  <title>Aprenda+ — aprender abre caminhos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="assets/js/script.js" defer></script>
 </head>
 <body>
-
-<header class="topo">
-  <div class="faixa">
-    <p class="marca">Aprende+ Português</p>
-    <nav>
-      <a href="#problema">O Problema</a>
-      <a href="#cadastrar">Registrar Aula</a>
-      <a href="#mural">Mural de Progresso</a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <a class="brand" href="#inicio" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="nav-principal" aria-label="Abrir menu"><span></span><span></span></button>
+    <nav id="nav-principal" class="nav-links" aria-label="Navegação principal">
+      <a href="#proposta">A proposta</a><a href="#como-funciona">Como funciona</a><a href="#praticar">Pratique</a><a href="#impacto">Impacto</a><a href="#documentacao">Documentação</a>
+      <a href="login.html">Entrar</a>
+      <a class="nav-cta" href="#participe">Quero participar <span aria-hidden="true">↗</span></a>
     </nav>
-  </div>
-</header>
+    <div class="header-emblems" aria-label="Brasões institucionais">
+      <img src="assets/images/brasao-colegio.png" alt="Brasão circular do colégio">
+      <img src="assets/images/brasao-parana.png" alt="Brasão estadual">
+    </div>
+  </header>
 
-<section class="capa">
-  <img src="imagens/capa.jpg" alt="Pessoa utilizando fones de ouvido e celular para estudar">
-  <div class="capa-texto">
-    <h1>Aprender a ler abre portas e transforma vidas</h1>
-    <p>Exercícios focados na associação de áudios, imagens e sílabas para o letramento prático de adultos.</p>
-    <a class="botao" href="#cadastrar">Registrar Progresso</a>
-  </div>
-</section>
-
-<main>
-
-<section id="problema" class="bloco">
-  <h2>O Problema</h2>
-  <p class="largura-texto">O analfabetismo funcional na idade adulta dificulta a leitura de placas, rótulos e avisos no dia a dia, limitando a autonomia das pessoas.</p>
-  <p class="largura-texto"><b>Quem sofre com isso:</b> Adultos e idosos não alfabetizados da nossa comunidade.</p>
-  <p class="largura-texto"><b>Onde acontece:</b> No bairro e nas tarefas cotidianas do dia a dia.</p>
-  <div class="galeria">
-    <figure>
-      <img src="imagens/foto1.jpg" alt="Exercício prático de associação entre palavras e imagens do cotidiano">
-      <figcaption>Atividade prática com leitura de embalagens e nomes de produtos.</figcaption>
-    </figure>
-    <figure>
-      <img src="imagens/foto2.jpg" alt="Pessoa praticando a escrita e pronúncia de sílabas simples">
-      <figcaption>Uso de recursos audiovisuais para fixação de sílabas e vogais.</figcaption>
-    </figure>
-  </div>
-</section>
-
-<section class="bloco">
-  <h2>Os Números do Projeto</h2>
-  <p class="largura-texto">Indicador: número de exercícios concluídos por alunos em 4 semanas.</p>
-  <div class="painel" id="painel"></div>
-</section>
-
-<section id="cadastrar" class="bloco">
-  <h2>Registrar Progresso da Aula</h2>
-  <form id="formulario" class="formulario">
-    <div class="campo">
-      <label for="nomeAluno">Nome ou Apelido do Aluno</label>
-      <input type="text" id="nomeAluno" maxlength="80" required placeholder="Ex: Maria S.">
-    </div>
-    <div class="campo">
-      <label for="nivelModulo">Módulo do Exercício</label>
-      <select id="nivelModulo" required>
-        <option value="">Selecione um módulo...</option>
-        <option>Vogais</option>
-        <option>Sílabas Simples</option>
-        <option>Palavras do Dia a Dia</option>
-        <option>Frases Curtas</option>
-      </select>
-    </div>
-    <div class="campo">
-      <label for="exercicioRealizado">Nome do Exercício</label>
-      <input type="text" id="exercicioRealizado" maxlength="80" required placeholder="Ex: Reconhecimento de Vogais com Som">
-    </div>
-    <div class="campo">
-      <label for="pontuacao">Desempenho (Nota de 0 a 10)</label>
-      <input type="number" id="pontuacao" min="0" max="10" step="1" required placeholder="10">
-    </div>
-    <div class="campo largo">
-      <label for="observacoes">Observações ou Dificuldades</label>
-      <textarea id="observacoes" rows="3" maxlength="300" required placeholder="Descreva como o aluno se saiu no exercício..."></textarea>
-    </div>
-    <button type="submit" class="botao">Salvar Registro</button>
-    <p id="aviso" class="aviso" role="status"></p>
-  </form>
-</section>
-
-<section id="mural" class="bloco">
-  <h2>Mural de Progresso</h2>
-  <div class="ferramentas">
-    <div class="ferramenta">
-      <label for="busca">Buscar</label>
-      <input type="text" id="busca" placeholder="Buscar por aluno ou palavra...">
-    </div>
-    <div class="ferramenta">
-      <label for="filtro">Filtrar Módulo</label>
-      <select id="filtro">
-        <option value="todas">Todos os Módulos</option>
-        <option>Vogais</option>
-        <option>Sílabas Simples</option>
-        <option>Palavras do Dia a Dia</option>
-        <option>Frases Curtas</option>
-      </select>
-    </div>
-    <div class="ferramenta">
-      <label for="exportar">Backup de Dados</label>
-      <div class="grupo-botoes">
-        <button type="button" id="exportar" class="botao-fino">Baixar</button>
-        <label for="importar" class="botao-fino">Carregar</label>
-        <input type="file" id="importar" accept="application/json" hidden>
-        <button type="button" id="limpar" class="botao-fino perigo">Apagar Tudo</button>
+  <main id="conteudo">
+    <section class="hero section-wrap" id="inicio">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="eyebrow-dot"></span> EDUCAÇÃO QUE CABE NA VIDA REAL</p>
+        <h1>Aprender a ler<br>abre <em>novos caminhos.</em></h1>
+        <p class="hero-lede">Uma proposta para aproximar jovens e adultos da leitura e da escrita com atividades simples, apoio humano e respeito à rotina de cada pessoa.</p>
+        <div class="hero-actions"><a class="button button-dark" href="#como-funciona">Conheça a proposta <span>↓</span></a><a class="text-link" href="#documentacao">Leia a documentação <span>↗</span></a></div>
+        <div class="hero-note"><span class="note-icon">✳</span><span>Aprendizagem no próprio ritmo,<br>com a comunidade por perto.</span></div>
       </div>
-    </div>
-  </div>
-  <div id="lista" class="lista"></div>
-</section>
+      <div class="hero-art" aria-label="Ilustração de uma pessoa estudando com um livro aberto">
+        <div class="art-shape shape-back"></div><div class="art-shape shape-front"></div>
+        <div class="sun"></div><div class="plant plant-one"><i></i><i></i><i></i><b></b></div><div class="plant plant-two"><i></i><i></i><b></b></div>
+        <div class="book"><div class="book-page left-page"><span>MEU</span><strong>começo</strong><i></i><i></i></div><div class="book-page right-page"><span>MINHA</span><strong>história</strong><i></i><i></i></div></div>
+        <div class="person"><div class="hair"></div><div class="face"></div><div class="body"></div><div class="arm"></div></div>
+        <div class="floating-card"><span>✦</span><div><b>Um passo de cada vez</b><small>Hoje também é dia de aprender.</small></div></div>
+        <div class="art-caption">LEITURA · ESCRITA · AUTONOMIA</div>
+      </div>
+      <div class="hero-bottom"><span>01 — UMA IDEIA, MUITOS CAMINHOS</span><span>DESLIZE PARA CONHECER <b>↓</b></span></div>
+    </section>
 
-</main>
+    <section class="statement section-wrap" id="proposta">
+      <div class="section-label"><span>01</span> A PROPOSTA</div>
+      <div class="statement-content"><h2>Alfabetizar é criar<br>mais <em>possibilidades.</em></h2><div class="statement-side"><p>O Aprenda+ é uma proposta de apoio à alfabetização de jovens e adultos. Ela combina um site leve, atividades práticas e encontros com mediadores da comunidade.</p><p>O objetivo é apoiar a aprendizagem com situações que fazem parte do cotidiano — ler uma mensagem, preencher um formulário, escrever uma lista ou entender uma informação importante.</p><a class="arrow-link" href="#como-funciona">Entenda como funciona <span>↘</span></a></div></div>
+      <div class="principles"><article><span>01</span><h3>Sem pressa</h3><p>Cada pessoa aprende em um ritmo diferente. O caminho pode ser retomado a qualquer momento.</p></article><article><span>02</span><h3>Com propósito</h3><p>As atividades partem de situações reais para que o aprendizado tenha sentido e utilidade.</p></article><article><span>03</span><h3>Em comunidade</h3><p>Mediadores e espaços parceiros ajudam a manter o vínculo e a confiança durante o processo.</p></article></div>
+    </section>
 
-<footer class="rodape">
-  <p>Projeto Aprende+ Português | Desenvolvido para o Trabalho de Programação</p>
-  <p class="miudo">Alinhado ao ODS 4 (Educação de Qualidade) da ONU. Protótipo funcional com armazenamento local.</p>
-</footer>
+    <section class="how section-wrap" id="como-funciona">
+      <div class="section-label"><span>02</span> COMO FUNCIONA</div><div class="how-heading"><h2>Pequenas práticas.<br><em>Conquistas de verdade.</em></h2><p>O percurso é flexível: dá para começar pelo celular, continuar em um espaço comunitário ou alternar entre os dois.</p></div>
+      <div class="steps"><article class="step"><div class="step-number">1</div><div class="step-visual visual-message"><span class="message-bubble">Oi, tudo bem?</span><span class="message-bubble reply">Vamos praticar?</span><span class="visual-spark">✳</span></div><h3>Escolha um tema</h3><p>Saúde, trabalho, família e outros assuntos da vida cotidiana.</p></article><article class="step"><div class="step-number">2</div><div class="step-visual visual-audio"><button class="play-button" aria-label="Exemplo visual de áudio"><span>▶</span></button><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span class="audio-label">OUVIR E ACOMPANHAR</span></div><h3>Pratique do seu jeito</h3><p>Leia, escute o áudio e experimente atividades curtas com instruções claras.</p></article><article class="step"><div class="step-number">3</div><div class="step-visual visual-check"><div class="check-circle">✓</div><div class="check-lines"><i></i><i></i><i></i></div><span class="check-star">✦</span></div><h3>Compartilhe e avance</h3><p>Converse com um mediador, celebre o progresso e escolha o próximo passo.</p></article></div>
+      <div class="offline-note"><span class="offline-icon">◉</span><p><b>Feito para conexões limitadas.</b> Páginas leves e materiais que podem ser baixados para uso offline tornam o percurso mais acessível.</p></div>
+    </section>
 
-<script src="script.js"></script>
+    <section class="practice section-wrap" id="praticar">
+      <div class="section-label"><span>03</span> HORA DE PRATICAR</div>
+      <div class="practice-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> UM EXERCÍCIO RÁPIDO</p><h2>Leia, pense,<br><em>descubra.</em></h2></div><p>Uma atividade curta de compreensão com situações do dia a dia. Responda no seu ritmo e veja uma explicação a cada passo.</p></div>
+      <div class="level-picker"><p>ESCOLHA SEU NÍVEL</p><div class="level-options" role="group" aria-label="Escolha o nível da atividade"><button class="level-button is-selected" type="button" data-level="iniciante" aria-pressed="true">Iniciante</button><button class="level-button" type="button" data-level="intermediario" aria-pressed="false">Intermediário</button><button class="level-button" type="button" data-level="avancado" aria-pressed="false">Avançado</button></div></div>
+      <div class="practice-card" id="practice-card">
+        <div class="practice-top"><span class="practice-tag"><span>✳</span> <span id="level-name">INICIANTE</span></span><span class="practice-count" id="practice-count">1 DE 3</span></div>
+        <div class="progress-track" role="progressbar" aria-label="Progresso da atividade" aria-valuemin="0" aria-valuemax="3" aria-valuenow="0"><span id="practice-progress"></span></div>
+        <div class="question-area">
+          <div class="question-copy"><h3 id="practice-question">Na placa está escrito “SAÍDA”. Qual palavra indica por onde deixar um lugar?</h3><button class="listen-button" id="listen-question" type="button"><span aria-hidden="true">▶</span> Ouvir a pergunta</button></div>
+          <div class="answer-area"><p class="answer-instruction">ESCOLHA UMA RESPOSTA</p><div class="answer-options" id="answer-options" role="group" aria-label="Opções de resposta"></div><p class="answer-feedback" id="answer-feedback" aria-live="polite" aria-atomic="true"></p><button class="button button-dark next-question" id="next-question" type="button" disabled>Responder para continuar <span>→</span></button></div>
+        </div>
+        <p class="practice-footnote"><span aria-hidden="true">◎</span> Errar faz parte do aprendizado. Você pode tentar de novo quantas vezes quiser.</p>
+      </div>
+    </section>
+
+    <section class="impact" id="impacto"><div class="impact-inner section-wrap"><div class="section-label light"><span>04</span> POR QUE ISSO AJUDA</div><div class="impact-grid"><div><h2>Aprender com apoio<br>pode mudar o <em>dia a dia.</em></h2><p>A proposta não substitui a escola nem políticas públicas. Ela cria mais uma porta de entrada: acolhedora, prática e próxima dos espaços onde as pessoas vivem.</p><a class="button button-light" href="#documentacao">Veja a solução por dentro <span>↘</span></a></div><div class="impact-list"><article><span>01</span><div><h3>Acesso flexível</h3><p>Conteúdos curtos e compatíveis com celular facilitam estudar em diferentes horários.</p></div></article><article><span>02</span><div><h3>Aprendizagem com sentido</h3><p>Textos ligados ao cotidiano ajudam a conectar letras, palavras e situações concretas.</p></div></article><article><span>03</span><div><h3>Vínculo e continuidade</h3><p>O acompanhamento de mediadores pode incentivar a prática e ajudar a superar dificuldades.</p></div></article><article><span>04</span><div><h3>Autonomia progressiva</h3><p>Praticar leitura e escrita pode ampliar a participação em serviços e decisões do dia a dia.</p></div></article></div></div><div class="impact-foot"><span>UMA PROPOSTA PARA SOMAR ESFORÇOS</span><span>ACESSO · PRÁTICA · ACOLHIMENTO</span></div></div></section>
+
+    <section class="documentation section-wrap" id="documentacao"><div class="section-label"><span>05</span> DOCUMENTAÇÃO DA SOLUÇÃO</div><div class="doc-heading"><h2>Da ideia à <em>ação.</em></h2><p>Uma visão objetiva do problema, da resposta proposta e de como saber se ela está ajudando.</p></div><div class="doc-grid"><article class="doc-card doc-problem"><span class="doc-index">01 / DESAFIO</span><h3>O problema</h3><p>Jovens e adultos podem encontrar barreiras para iniciar ou continuar a alfabetização: falta de tempo, distância, acesso digital limitado, experiências escolares difíceis e conteúdos pouco conectados à sua realidade.</p></article><article class="doc-card doc-solution"><span class="doc-index">02 / RESPOSTA</span><h3>A solução</h3><p>Um portal gratuito com trilhas curtas de leitura e escrita, áudio, exemplos do cotidiano e materiais leves para baixar. A proposta inclui parceria com bibliotecas, associações e educadores para oferecer apoio presencial.</p></article><article class="doc-card doc-audience"><span class="doc-index">03 / PÚBLICO</span><h3>Para quem</h3><p>Jovens e adultos em processo de alfabetização, além de educadores e mediadores que apoiam a aprendizagem em espaços comunitários.</p></article><article class="doc-card doc-measure"><span class="doc-index">04 / ACOMPANHAMENTO</span><h3>Como avaliar</h3><p>Observar participação e retorno às atividades; acompanhar habilidades em tarefas práticas; ouvir estudantes e mediadores; e revisar conteúdos a partir das dificuldades encontradas.</p></article></div><div class="measure-note"><span>↗</span><p><b>Indicadores possíveis:</b> atividades iniciadas e concluídas, frequência de retorno, autoavaliação de confiança e evolução em tarefas de leitura e escrita. Os dados devem ser coletados com consentimento, privacidade e sem expor estudantes.</p></div><details class="doc-details"><summary>Próximos passos para colocar a proposta em prática <span>＋</span></summary><ol><li>Co-criar e testar as atividades com estudantes e educadores.</li><li>Formar parcerias com espaços de aprendizagem locais.</li><li>Começar com um piloto pequeno e acessível, com opção de uso impresso.</li><li>Avaliar os resultados e adaptar o conteúdo junto à comunidade.</li></ol></details></section>
+
+    <section class="join section-wrap" id="participe"><div class="join-art" aria-hidden="true"><div class="join-sun"></div><div class="join-book">A B C</div><div class="join-leaf">✳</div></div><div class="join-copy"><p class="eyebrow"><span class="eyebrow-dot"></span> TODO MUNDO PODE SOMAR</p><h2>Uma comunidade que<br>aprende <em>junto.</em></h2><p>Educadores, estudantes, bibliotecas e organizações podem ajudar a construir um percurso que faça sentido para cada território.</p><div class="join-actions"><a class="button button-dark" href="cadastro.html">Quero me cadastrar <span>↗</span></a><a class="join-login" href="login.html">Já tenho cadastro · Entrar</a></div></div></section>
+  </main>
+  <footer class="site-footer"><a class="brand footer-brand" href="#inicio" aria-label="Aprenda+, início"><img class="brand-logo" src="assets/images/logo.svg" alt="Aprenda+"></a><p>Mais acesso à leitura. Mais caminhos para todos.</p><span>PROPOSTA EDUCACIONAL · BRASIL</span><a class="back-top" href="#inicio" aria-label="Voltar ao início">↑</a><div class="footer-credits"><span>DESENVOLVEDORES</span><p>Bernardo Martinez · Pietro Martins · Gustavo Patrese · Lenon Becker</p></div></footer>
 </body>
 </html>
